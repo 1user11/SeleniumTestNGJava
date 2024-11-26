@@ -1,7 +1,6 @@
 package com.websitename.tests;
 
 import com.websitename.base.BaseTest;
-import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
