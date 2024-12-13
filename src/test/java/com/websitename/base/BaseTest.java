@@ -26,6 +26,14 @@ public class BaseTest {
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--window-size=1920,1080");
 
+
+//        ChromeOptions options = new ChromeOptions();
+//        String chromeOpts = System.getenv("CHROME_OPTIONS");
+//        if (chromeOpts != null) {
+//            options.addArguments(chromeOpts.split(";"));
+//        }
+
+
         driver = new ChromeDriver(options);
         driver.get("https://askomdch.com/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
