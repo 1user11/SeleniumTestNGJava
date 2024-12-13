@@ -9,7 +9,7 @@ public class TestTitle extends BaseTest {
 
     @Test
     public void testTitle() {
-        String expectedTitle= "AskOmDch – Become a Selenium automation exper!";
+        String expectedTitle= "AskOmDch – Become a Selenium automation expert!";
         Assert.assertEquals(driver.getTitle(), expectedTitle, "Title doesn't match!");
     }
 }
