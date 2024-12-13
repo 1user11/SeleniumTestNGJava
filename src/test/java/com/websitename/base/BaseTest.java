@@ -18,19 +18,19 @@ public class BaseTest {
 
     @BeforeMethod
     public void setUp() {
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--headless");
-//        options.addArguments("--no-sandbox");
-//        options.addArguments("--disable-dev-shm-usage");
-//        options.addArguments("--disable-gpu");
-//        options.addArguments("--remote-allow-origins=*");
-//        options.addArguments("--window-size=1920,1080");
-
         ChromeOptions options = new ChromeOptions();
-        String chromeOpts = System.getenv("CHROME_OPTIONS");
-        if (chromeOpts != null) {
-            options.addArguments(chromeOpts.split(";"));
-        }
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--window-size=1920,1080");
+
+//        ChromeOptions options = new ChromeOptions();
+//        String chromeOpts = System.getenv("CHROME_OPTIONS");
+//        if (chromeOpts != null) {
+//            options.addArguments(chromeOpts.split(";"));
+//        }
 
         driver = new ChromeDriver(options);
         driver.get("https://askomdch.com/");
