@@ -1,7 +1,6 @@
 package com.websitename.base;
 
 import com.websitename.listeners.TestListener;
-import com.websitename.utils.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
