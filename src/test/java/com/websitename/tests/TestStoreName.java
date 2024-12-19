@@ -22,7 +22,7 @@ public class TestStoreName extends BaseTest {
     @Test
     public void testStoreName() {
         Allure.step("Step 1: Get text from the website logo");
-        String websiteName = driver.findElement(By.xpath("//h1/a[@href='https://askomdch.co/']")).getText();
+        String websiteName = driver.findElement(By.xpath("//h1/a[@href='https://askomdch.com/']")).getText();
 
         Allure.step("Step 2: Validate Store Name is as expected");
         Assert.assertEquals(websiteName,"AskOmDch", "Store Name doesn't match!");
