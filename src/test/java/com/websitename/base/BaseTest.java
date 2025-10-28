@@ -4,9 +4,11 @@ import com.websitename.listeners.TestListener;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.lang.reflect.Method;
 import java.time.Duration;
 
 import org.testng.annotations.Listeners;
@@ -40,7 +42,17 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void tearDown() {
-        driver.quit();
+    public void tearDown(Method method, ITestResult testResult) {
+        if (!testResult.isSuccess()) {
+            ProjectUtils.takeScreenshot(driver, testResult.getTestClass().getRealClass().getSimpleName(), testResult.getName());
+        }
+
+        if (driver != null) {
+            try {
+                driver.quit();
+            } catch (Exception e) {
+                System.out.println("Error while closing the browser: " + e.getMessage());
+            }
+        }
     }
 }
